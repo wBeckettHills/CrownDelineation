@@ -176,4 +176,7 @@ Other notes:
 - Keep things organized with groups in the document
 - Maintaining a clean directory structure that mimics your map docs will ease transferability and sharing
 
+ADD MORE HERE ABOUT HOW TO ACTUALLY DO THIS
+(linking to other tutorials can help)
+
 
