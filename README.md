@@ -2,7 +2,7 @@
 A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.
 
 ## Intro
-The most important information in remote sensing research is extracted from the canopy to be used to create spatial models. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing science a lab produces.
+The most important information in remote sensing research is extracted from the canopy to be used to create spatial models. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing science a remote sensing lab produces.
 
 Your skills are an important part of this lab's ability to produce good science. The canopy is HARD to define and being efficient is a skill set that is only learned through experience.  Do your best and ask a lot of questions.
 
