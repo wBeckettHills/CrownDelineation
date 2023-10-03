@@ -1,6 +1,5 @@
 # Crown Delineation
-
-<img style="float: center; padding: 10px 10px 10px 10px;" width="270" src=imgs/cover_shot_crowns.png><img style="float: right; padding: 10px 10px 10px 10px;" width="250" src=imgs/cover_shot.png> <br clear="left">
+<img style="float: right; padding: 10px 10px 10px 10px;" width="250" src=imgs/cover_shot.png> <img style="float: right; padding: 10px 10px 10px 10px;" width="270" src=imgs/cover_shot_crowns.png> 
 A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.
 
 
