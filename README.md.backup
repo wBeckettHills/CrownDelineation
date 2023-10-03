@@ -1,8 +1,6 @@
 # Crown Delineation
-<img style="float: right; padding: 10px 10px 10px 10px;" width="250" src=imgs/cover_shot.png> <img style="float: right; padding: 10px 10px 10px 10px;" width="270" src=imgs/cover_shot_crowns.png> <br clear="left">
-A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.
 
-
+A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.  <br clear="left"><img style="float: left; padding: 10px 10px 10px 10px;" width="250" src=imgs/cover_shot.png><br clear="right"><img style="float: right; padding: 10px 10px 10px 10px;" width="250" src=imgs/cover_shot_crowns.png><br clear="left">
 ## Intro
 The most important information in remote sensing research is extracted from the canopy to be used to create spatial models. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing a remote sensing lab produces.
 
