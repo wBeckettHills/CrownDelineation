@@ -1,5 +1,8 @@
 # Crown Delineation
+
+<img style="float: center; padding: 10px 10px 10px 10px;" width="270" src=imgs/cover_shot_crowns.png><img style="float: right; padding: 10px 10px 10px 10px;" width="250" src=imgs/cover_shot.png> <br clear="left">
 A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.
+
 
 ## Intro
 The most important information in remote sensing research is extracted from the canopy to be used to create spatial models. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing a remote sensing lab produces.
@@ -62,6 +65,7 @@ The final plots being drawn will need to cover the area of the crown that the pr
 ###### Basic Protocol
 - The main objective is to focus on "pure" canopy pixels --> target high quality pixels that are the ***best*** representation of that species
 
+<img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/contours_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/contours_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/contours_october.png> <br clear="left">
 - Canopy Contours
      - Sunny side of the canopy (southern side in Northern Hemisphere)
      - Reduce shaded side / shadow pixels --> In a time series, the ```ref``` image may have canopy shading, while other flights over the same area later in the year may have the entire canopy illuminated, look ahead to judge across all dates
@@ -71,6 +75,8 @@ The final plots being drawn will need to cover the area of the crown that the pr
     - Be aware of spectral pollution from adjacent bright, dark, or mixed areas
 - Canopy Closure
     - When trees merge, do your best to find the correct tree in earlier / later season imagery before / after the canopy is at peak biomass.
+ 
+<img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_october.png> <br clear="left">
  
 ###### Basic Tracing Guidelines
  - EXPECTATIONS
