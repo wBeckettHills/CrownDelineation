@@ -2,17 +2,17 @@
 A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.
 
 ## Intro
-The most important information in remote sensing research is extracted from the canopy to be used to create spatial models. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing science a remote sensing lab produces.
+The most important information in remote sensing research is extracted from the canopy to be used to create spatial models. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing a remote sensing lab produces.
 
-Your skills are an important part of this lab's ability to produce good science. The canopy is HARD to define and being efficient is a skill set that is only learned through experience.  Do your best and ask a lot of questions.
+Your skills are an important part of this lab's ability to produce good science. The canopy is *hard* to define, being efficient is a skill set that is only learned through experience.  Do your best and ask a lot of questions.
 
 The overall goal of this guide is to go over canopy crown tracing. To break it down, we need to know some basics of the sampling, which is presented as a set of prompts and questions to help guide yourself to the final outcomes needed.
 
 ### Background
-It starts with leaf and plot sampling in the field. Later determining and digitizing those precise locations in the imagery is how the leaf chemistry is translated into pixels. The canopy was measured in a particular way based on the remote sensing product(s) going to be used for the research questions. There should be a modicum of notes/protocol, plot photos, and digital files available to help, in addition to the imagery itself, which should all be leveraged to ensure the best attempt goes into finding and tracing each canopy. Get to know the project and work toward creating an organized set of spatial files and supporting information that cohesively provides enough background and context to get started.
+It starts with leaf and plot sampling in the field, then later determining and digitizing those precise locations in the imagery is how the leaf chemistry is translated into pixels. The canopy was measured in a particular way based on the remote sensing product(s) going to be used for the research questions. There should be a modicum of notes/protocol, plot photos, and digital files available to help, in addition to the imagery itself, which should all be leveraged to ensure the best attempt goes into finding and tracing each canopy. Get to know the project and work toward creating an organized set of spatial files and supporting information that cohesively provides enough background and context to get started.
 
 #### Project Design
-The research intends to use remote sensing products, and this is a basic place to start to understand what the final goals will be and how the researchers plan to extract the pixel values.
+The research intends to use remote sensing products, and this is a basic place to start to understand what the final goals will be and how the researchers plan to extract the pixel values. There are far more research designs than the basic example here that supports the goal of this guide focused on crowns. This is intended to serve as a simple question or prompt highlighting how project design is incorporated into the digitization of the sample plots.
 
 ```Single Crown > Pixel Resolution``` or ```Single Crown < Pixel Resolution``` ? 
 1. If the outcome is to use imagery with 1-4m pixels (or less), it is essentially a "CANOPY" design, because the size of an individual tree is big enough and pixels are small enough that the single canopy will cover multiple pixels. This is when tree canopies need to be carefully traced, which is what this guide covers.
