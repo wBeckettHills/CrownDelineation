@@ -1,6 +1,6 @@
 # Crown Delineation
 
-A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.<br clear="right"> <img style="float: left; padding: 2px 2px 2px 2px;" width="30%" src=imgs/cover_shot.png>  <img style="float: right; padding: 2px 2px 2px 2px;" width="33%" src=imgs/cover_shot_crowns.png><br clear="right">
+A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.<br clear="right"> <img style="float: left; padding: 2px 2px 2px 2px;" width="30%" src=imgs/cover_shot.png>  <img style="float: right; padding: 2px 2px 2px 2px;" width="32%" src=imgs/cover_shot_crowns.png>
 
 <br clear="left">
 
