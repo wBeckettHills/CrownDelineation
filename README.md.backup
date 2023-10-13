@@ -1,20 +1,20 @@
 # Crown Delineation
 
-A repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.<br clear="left"> <img style="float: left; padding: 2px 2px 2px 2px;" width="40%" src=imgs/cover_shot.png>  <img style="float: right; padding: 2px 2px 2px 2px;" width="42%" src=imgs/cover_shot_crowns.png>
+This is a repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.<br clear="left"> <img style="float: left; padding: 2px 2px 2px 2px;" width="40%" src=imgs/cover_shot.png>  <img style="float: right; padding: 2px 2px 2px 2px;" width="43%" src=imgs/cover_shot_crowns.png>
 <br clear="right">
 
 ## Intro
-The most important information in remote sensing research is extracted from the canopy to be used to create spatial models. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing a remote sensing lab produces.
+In remote sensing research, important information is extracted from imagery collected above tree canopies. This information is used to create spatial models that can help us understand what is happening on the ground and predict how it might change. Field sampling, data entry, and canopy delineation tasks are the most time consuming, repetitive, skill-oriented, and, yet, still remain to be the most critical part of data collection and processing a remote sensing lab produces.
 
 Your skills are an important part of this lab's ability to produce good science. The canopy is *hard* to define, being efficient is a skill set that is only learned through experience.  Do your best and ask a lot of questions.
 
-The overall goal of this guide is to go over canopy crown tracing. To break it down, we need to know some basics of the sampling, which is presented as a set of prompts and questions to help guide yourself to the final outcomes needed.
+The overall goal of this guide is to go over canopy crown tracing. To break it down, we need to know some basics of the sampling and remote sensing. We introduce several concepts in the first part and then have a training exercise in the second.
 
 ### Background
-It starts with leaf and plot sampling in the field, then later determining and digitizing those precise locations in the imagery is how the leaf chemistry is translated into pixels. The canopy was measured in a particular way based on the remote sensing product(s) going to be used for the research questions. There should be a modicum of notes/protocol, plot photos, and digital files available to help, in addition to the imagery itself, which should all be leveraged to ensure the best attempt goes into finding and tracing each canopy. Get to know the project and work toward creating an organized set of spatial files and supporting information that cohesively provides enough background and context to get started.
+Most of the remote sensing studies in this lab starts with leaf and plot sampling in the field (this is often called "ground-truthing"). The next step is to then determine and digitize the precise locations of those leaves and plots in the imagery. This how leaf chemistry,i.e., the thing we measured on the ground, is translated into pixels. Based on the research questions and remote sensing products being used, the canopy is measured in a particular way. There should be a modicum of notes/protocol, plot photos, and digital files available to help, in addition to the imagery itself, which should all be leveraged to ensure the best attempt goes into finding and tracing each canopy. Get to know the project and work toward creating an organized set of spatial files and supporting information that cohesively provides enough background and context to get started.
 
 #### Project Design
-The research intends to use remote sensing products, and this is a basic place to start to understand what the final goals will be and how the researchers plan to extract the pixel values. There are far more research designs than the basic example here that supports the goal of this guide focused on crowns. This is intended to serve as a simple question or prompt highlighting how project design is incorporated into the digitization of the sample plots.
+Most research in the lab uses remote sensing products. While there far more research designs than what we can cover in this guide, the following demonstrates an example of possible final goals of the research, which informs how the researchers plan to extract the pixel values. This is intended to serve as a simple question or prompt highlighting how project design is incorporated into the digitization of the sample plots.
 
 ```Single Crown > Pixel Resolution``` or ```Single Crown < Pixel Resolution``` ? 
 1. If the outcome is to use imagery with 1-4m pixels (or less), it is essentially a "CANOPY" design, because the size of an individual tree is big enough and pixels are small enough that the single canopy will cover multiple pixels. This is when tree canopies need to be carefully traced, which is what this guide covers.
@@ -28,7 +28,7 @@ Before discussing imagery, this is a short section to present the concept of ima
 Any products used for tracing should ideally be co-registered (one image registered to another means shifting one to match the other). The concept of being successfully registered means that when flipping from image to image, a building or a tree is aligned with itself and not shifting slightly across the products. If they are not, it is more critical that the work is done carefully to ensure errors are not inserted. It is fine to use other images that are not perfectly co-registered to develop a better context of the digital canopy, just take care to ensure that this is only used as an aid.
 
 #### Reference Image
-Since tree canopies being traced become uniquely geo-registered to that single image in time, it is important to identify a good, clear image early on as the ```reference``` or ```ref``` image (older terminology may refer to this as the master or main image). Other common terms may be ```basemap``` or ```base mosaic```. Regardless of whether products are co-registered together ahead of time, the identity of this image should be highlighted accordingly. 
+Since tree canopies being traced become uniquely geo-registered to that single image in time, it is important to identify a good, clear image early on as the ```reference``` or ```ref``` image (older terminology may refer to this as the master or main image). Other common terms may be ```basemap``` or ```base mosaic```. Regardless of whether products are co-registered together ahead of time, the identity of this image should be highlighted accordingly. The researcher you are working with will help you identify what this reference image will be for the project at hand. Always make sure you are clear on what reference image you are supposed to be using. It is best to ask first if you are unsure.
 
 All tracing and finalizing of point / polygon placement is ultimately completed back on the ```ref``` image. It is absolutely critical that this concept is followed closely.
 
@@ -36,7 +36,7 @@ All tracing and finalizing of point / polygon placement is ultimately completed 
 This is a short list of remote sensing products and field data the lab commonly uses or has available for ```CANOPY``` designs. Work with the researchers on the project to know what is actually available to use.
 
 ##### Base Imagery
-The base imagery is primarily ```raster``` form when used. LiDAR ```point clouds``` are also usually turned into a ```raster``` to be used as surface and height models. 
+The base imagery is primarily ```raster``` form when used [See here for a description of raster](https://desktop.arcgis.com/en/arcmap/latest/manage-data/raster-and-images/what-is-raster-data.htm). LiDAR ```point clouds``` are also usually turned into a ```raster``` to be used as surface and height models. See [here](https://oceanservice.noaa.gov/facts/lidar.html) and [here](https://pro.arcgis.com/en/pro-app/latest/help/data/las-dataset/what-is-lidar-.htm) to learn more about LiDAR.
 
 Here are just a few examples of what's most commonly used in the Townsend Lab:
 1. Hyperspectral (```raster```)
@@ -57,9 +57,9 @@ Here are just a few examples of what's most commonly used in the Townsend Lab:
     1. Occasionally a higher resolution mosaic or surface may be available from drone cameras
 
 ##### Canopy Points & Polygons
-The plots in the field are marked with a GPS unit, which is then later used to manually create an adjusted, additional set of point and polygon (```vector```) layers that more accurately locate each sample area in the ```reference``` remote sensing image(s). Collecting good GPS data is not covered in this guide, although having a basic understanding of the principles can offer insight to the reliability of each piece of information you use to build the context and decide on where to trace the canopy.
+The plots in the field are marked with a GPS unit, which is then later used to manually create an adjusted, additional set of point and polygon (```vector```) layers that more accurately locate each sample area in the ```reference``` remote sensing image(s). See [here](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/vector_data.html) to learn more about what vector data is. Collecting good GPS data is not covered in this guide, although having a basic understanding of the principles can offer insight to the reliability of each piece of information you use to build the context and decide on where to trace the canopy.
 
-The final plots being drawn will need to cover the area of the crown that the project research team sampled. The Townsend Lab has some general basic protocol and guidelines used across most projects. Use these as a suggested place to start when discussing this with your project's leader. 
+The final plots being drawn will need to cover the area of the crown that the project research team sampled. The Townsend Lab has some general basic protocol and guidelines used across most projects. Use the section below as a suggested place to start when discussing this with your project's leader. 
 
 ###### Basic Protocol
 - The main objective is to focus on "pure" canopy pixels --> target high quality pixels that are the ***best*** representation of that species
@@ -71,9 +71,13 @@ The final plots being drawn will need to cover the area of the crown that the pr
 - Canopy Edges
     - Avoid edges where shadows and thinning leaves
     - If the purpose of a project is to scale data (e.g., turn small pixels into big ones), be aware the canopy polygon may include the edges as fewer pixels define the crown. 
-    - Be aware of spectral pollution from adjacent bright, dark, or mixed areas
+    - Be aware of spectral pollution from adjacent bright, dark, or mixed areas. Sometimes these are referred to as adjacency effects.
 - Canopy Closure
     - When trees merge, do your best to find the correct tree in earlier / later season imagery before / after the canopy is at peak biomass.
+- Canopy Height
+    - A canopy height model (CHM) can help identify crown
+- Canopy Phenology
+    - A time series can is
  
 <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_october.png> <br clear="left">
  
@@ -105,7 +109,7 @@ The final plots being drawn will need to cover the area of the crown that the pr
 
 
 ##### GPS Units
-The precision of the units used can range from many meters to a couple centimeters, here are the basic units the lab uses:
+The precision of the GPS units used in a project can range from many meters to a couple centimeters. Here are the basic units the lab uses:
 
 ```GARMIN```  These smaller units (along with other brand of handheld units) are easier to pack and carry, but the 2-5m error in all three (X,Y,Z) directions means the final points aren't precise enough for canopy delineation and often serve only as a quick way to keep a digital record of the location. There are ways to enhance this in the field if the crew used ```averaging``` setting, but it is generally still not reliable enough for canopies.
 
@@ -120,7 +124,7 @@ Other points to note:
 
 
 #### CRS
- It is critical to understand from the very beginning how to handle the coordinate reference system (CRS) for the geospatial files. NEON and ABoVe cover multiple UTM zones, so this can be challenging to ensure you are tracing in the most accurate CRS for that image in the particular region it was imaged. 
+ It is critical to understand from the very beginning how to handle the coordinate reference system (CRS) for the geospatial files. NEON and ABoVe cover multiple UTM zones, so this can be challenging to ensure you are tracing in the most accurate CRS for that image in the particular region it was imaged. If you are interested, see [here](https://docs.qgis.org/3.28/en/docs/gentle_gis_introduction/coordinate_reference_systems.html) for a guide that explains projection systems in GIS.
 
 ##### UTM vs Lat/Long
 UTM zones are commonly used by the lab since the accuracy is sufficient for all the project designs. More accurate CRS may be used for higher-precision work such as surveying, but that level is generally unnecessary for the lab's larger scale work. While Lat / Long is more intuitive and very common, it can be very problematic for accuracies, so avoid this when working on crowns.
@@ -185,10 +189,77 @@ Other notes:
 ### Base ```REF``` Imagery
 
 
+# Crown Delineation Training Exercises
 
-### Tracing Crowns
+Now that you have some background information, now it is time for you to begin applying these skills. The goals of this exercise is to get you familiar with QGIS, able to open and save GIS data, create and edit canopy delineation polygons, and troubleshoot common problems you may encounter.
 
-ADD MORE HERE ABOUT HOW TO ACTUALLY DO THIS
-(linking to other tutorials can help)
+
+## Getting familiar with QGIS
+
+You may have heard of GIS software like ArcMap, GRASS, and QGIS. These programs give a graphical interface to work with spatial data. Our lab often uses QGIS because it is an open-source software that can be used on both Mac and Windows platforms. The general principles translate well across software. 
+
+To familiarize yourself with QGIS, we recommend completing Module 2 of the QGIS tutorial: https://docs.qgis.org/3.28/en/docs/training_manual/basic_map/index.html
+
+## Set up your folders
+
+As mentioned in the Project directory section above, you first need to set up an area on your computer where all of your work will be saved and located. A directory is just a folder on your computer. A "subdirectory"" is a folder within a main folder. As mentioned above, naming folders clearly and descriptively is important so that you and others can easily locate and replicate what you are doing. Again do not use spaces in naming!
+
+Go ahead and set up your directories as follows:
+ - ARB
+     + base_mosaic
+     + gps_data
+     + tree_crowns
+     + qgis_maps
+     
+## Opening some data
+
+Download the example dataset. *Put specific instructions here*.  Put the raster file (denoted by a .tif) extension into your base_mosaic folder. Put the vector files (denoted by either the .geojson or .shp) into your tree_crowns folder.
+
+You can open the raster file by navigating to Layer > Add Layer > Add Raster Layer... A pop-up window will appear. Find your file at the top by inserting the file path or hitting the button with the three dots to find the file in your computer. Click the Add button at the bottom right of the popup to add it to the map.
+
+You can do the same for vector data, but instead navigate to Layer > Add Layer > Add Vector Layer...
+
+## Setting up QGIS
+
+*Becket can you put instructions on how to set up the map docs as you suggested?*
+
+## Creating a new polygon layers
+
+You are now going to create your first polygons to delineate a canopy. Navigate to Layer > Create Layer > New Shapefile Layer.
+
+A pop-up should now appear. Name the file and it within your tree_crown folder. Under the "Geometry Type" field select polygon. Check the CRS. Based on the above, which epsg code should you select?
+
+Now you should name some fields. The researcher you are working with will help define these for each specific project. For now lets create three fields, named "Plot", "Species", and "Notes". Each of these will be Type strings. You can reduce the number of characters to 40 and hit the "Add to Fields List Button." Once done, you can hit "OK" at the bottom right.
+
+Click the "Toggle Editing" button (it looks like a yellow pencil) and then click the "Add polygon feature" button. Choose a tree canopy to delineate. Now you can start drawing points that define the polgyon (these are called vertices). Remember the guidelines for canopy delineation above. To stop drawing your polygon, double or right click (depending if you use a mouse or laptop) the last vertex. You will now be prompted to enter the fields that you created earlier.
+
+You've done your first canopy. Congrats! Continue to draw more until you fill the entire image. 
+
+Once you are done editing click the save edit feature. It's recommended you do this often so you do not lose work as you draw.
+
+## Editing an existing polygon layer
+
+Now open the other vector file named *XYZ* that you downloaded (hopefully you put it into to the tree_crown folder). Go to Layer > Add Layer > Add vector layer...  Find where the file is located in the pop up and click Add.
+
+Anytime you are opening new data it's good practice to check the file details. Double or right click the new layer under the Layers panel. Click on Properties and navigate to the Source tab on the left. Uh-oh what is the CRS. Is it the one you should be using?
+
+You may need to project the file to the correct CRS. Note that you typically only want to do this for vector data. Consult the project lead before doing anything to a raster file. To project the current vector file, navigate to Vector > Data Management Tools > Reproject Layer...  Select the correct epsg code to reproject the current layer. Note that most GIS software will do something called on-the-fly projection to properly display data with different projection systems. It's best practice to actually project the data before working with it.
+
+Now that we know the CRS is correct. Let's delineate another canopy and add it to this file. Can figure this out based on the above exercise?
+
+
+## Common troubleshooting
+
+*Beckett you may have some more ideas here...*
+
+## Closing out and savings
+
+*Beckett, again you probably have a better idea on what ask for here*
+
+
+
+
+
+
 
 

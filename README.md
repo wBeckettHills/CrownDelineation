@@ -74,6 +74,10 @@ The final plots being drawn will need to cover the area of the crown that the pr
     - Be aware of spectral pollution from adjacent bright, dark, or mixed areas. Sometimes these are referred to as adjacency effects.
 - Canopy Closure
     - When trees merge, do your best to find the correct tree in earlier / later season imagery before / after the canopy is at peak biomass.
+- Canopy Height
+    - A canopy height model (CHM) can help identify crown
+- Canopy Phenology
+    - A time series can help identify species through seasonal shifts
  
 <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_october.png> <br clear="left">
  
