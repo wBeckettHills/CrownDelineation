@@ -1,6 +1,6 @@
 # Crown Delineation
 
-This is a repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.<br clear="left"> <img style="float: left; padding: 2px 2px 2px 2px;" width="40%" src=imgs/cover_shot.png>  <img style="float: right; padding: 2px 2px 2px 2px;" width="43%" src=imgs/cover_shot_crowns.png>
+This is a repository to collect information, templates, and best practices about delineating tree crowns in remote sensing imagery.<br clear="left"> <img style="float: left; padding: 2px 2px 2px 2px;" width="40%" src=graphics/cover_shot.png>  <img style="float: right; padding: 2px 2px 2px 2px;" width="43%" src=graphics/cover_shot_crowns.png>
 <br clear="right">
 
 ## Intro
@@ -64,7 +64,7 @@ The final plots being drawn will need to cover the area of the crown that the pr
 ###### Basic Protocol
 - The main objective is to focus on "pure" canopy pixels --> target high quality pixels that are the ***best*** representation of that species
 
-<img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/contours_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/contours_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/contours_october.png> <br clear="left">
+<img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=graphics/contours_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=graphics/contours_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=graphics/contours_october.png> <br clear="left">
 - Canopy Contours
      - Sunny side of the canopy (southern side in Northern Hemisphere)
      - Reduce shaded side / shadow pixels --> In a time series, the ```ref``` image may have canopy shading, while other flights over the same area later in the year may have the entire canopy illuminated, look ahead to judge across all dates
@@ -79,7 +79,9 @@ The final plots being drawn will need to cover the area of the crown that the pr
 - Canopy Phenology
     - A time series can help identify species through seasonal shifts
  
-<img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=imgs/shading_october.png> <br clear="left">
+<img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=graphics/shading_may.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=graphics/shading_july.png> <img style="float: center; padding: 10px 2px 10px 2px;" width="250" src=graphics/shading_october.png> <br clear="left">
+ 
+
  
 ###### Basic Tracing Guidelines
  - EXPECTATIONS
@@ -130,8 +132,8 @@ Other points to note:
 UTM zones are commonly used by the lab since the accuracy is sufficient for all the project designs. More accurate CRS may be used for higher-precision work such as surveying, but that level is generally unnecessary for the lab's larger scale work. While Lat / Long is more intuitive and very common, it can be very problematic for accuracies, so avoid this when working on crowns.
 
 ```EPSG``` codes are an easy way to define particular CRS, but not the only one. Common EPSG codes used for lab work:
-   1. <img align="right" width="150" src=imgs/epsg_32616.png>EPSG 326**15** and 326**16** split Wisconsin (**15**N and **16**N). UTM is in meters - this is often what is used. <br clear="right"> 
-   2. <img align="right" width="150" src=imgs/epsg_4326.png> EPSG 4326 - the lat/ or commonly called "WGS 84" projection, e.g., decimal degrees --> 10+ decimal places... or you lose precision!! This is not used for delineation, but will often be encountered as this is a very common format. Reprojecting these files into UTM is ideal. <br clear="right"> 
+   1. <img align="right" width="150" src=graphics/epsg_32616.png>EPSG 326**15** and 326**16** split Wisconsin (**15**N and **16**N). UTM is in meters - this is often what is used. <br clear="right"> 
+   2. <img align="right" width="150" src=graphics/epsg_4326.png> EPSG 4326 - the lat/ or commonly called "WGS 84" projection, e.g., decimal degrees --> 10+ decimal places... or you lose precision!! This is not used for delineation, but will often be encountered as this is a very common format. Reprojecting these files into UTM is ideal. <br clear="right"> 
  
 A good place to find projection information using EPSG codes is [spatialregerence.org](https://spatialreference.org). The projection strings or files maintained for each entry offers more advanced handling or troubleshooting.
 
@@ -213,49 +215,92 @@ Go ahead and set up your directories as follows:
      
 ## Opening some data
 
-Download the example dataset. *Put specific instructions here*.  Put the raster file (denoted by a .tif) extension into your base_mosaic folder. Put the vector files (denoted by either the .geojson or .shp) into your tree_crowns folder.
+Download the example dataset.
 
-You can open the raster file by navigating to Layer > Add Layer > Add Raster Layer... A pop-up window will appear. Find your file at the top by inserting the file path or hitting the button with the three dots to find the file in your computer. Click the Add button at the bottom right of the popup to add it to the map.
+*Currently the links are in slack on the ```#canopy-delineation``` channel. Eventually, specific instructions will be here to access a public version*
 
-You can do the same for vector data, but instead navigate to Layer > Add Layer > Add Vector Layer...
+Organize raster files (denoted by a .tif extension) into your ```base_mosaic``` folder. Put vector files (denoted by either the .geojson or .shp) your ```tree_crowns``` folder.
+
+You can open a raster file by navigating to ```Layer > Add Layer > Add Raster Layer```.  A pop-up window will appear. Find your file at the top by inserting the ```file path``` or hitting the button with the ```...``` three dots to find the file in your computer. Click the ```Add``` button at the bottom right of the popup to add it to the map.
+
+You can do the same for vector data, but instead navigate to ```Layer > Add Layer > Add Vector Layer```.
+
+```NOTE:``` Another common raster format you will encounter in this lab is ENVI images that have an image and an accompanying (required!) ```.hdr``` file. The image file may or may not have an extension, more often NOT in the lab's historical use. ```QGIS``` will not show files in the internal file browser that do not have an extension, and therefore will need to be added by dragging and dropping from an external file browser. (The practice of no extension is a major convenience for coding purposes)
+
+> UW-ARBORETUM_20200531 <br>
+> UW-ARBORETUM_20200531.hdr
+
 
 ## Setting up QGIS
 
-*Becket can you put instructions on how to set up the map docs as you suggested?*
+```QGIS``` has panels and toolbars that allow customization and workflow flexibility. 
+
+A common approach is to keep the ```Layer "Table of Contents"``` on the top left, the internal ```File Browser``` on the bottom left, and then the ```Processing Toolbox```, ```Layer Styling``` or other useful panels opened as tabs on the right side.<br>
+
+<img style="float: center; padding: 10px 2px 10px 2px;" width="650" src=graphics/QGIS_organization-overview.png> <br>
+
+These can be popped out and used across multiple screens, as well as hidden as tabs behind other ones. <br>
+<img style="float: center; padding: 10px 2px 10px 2px;" width="650" src=graphics/QGIS_organization-panels.png>
 
 ## Creating a new polygon layers
 
-You are now going to create your first polygons to delineate a canopy. Navigate to Layer > Create Layer > New Shapefile Layer.
+You are now going to create your first polygons to delineate a canopy. 
 
-A pop-up should now appear. Name the file and it within your tree_crown folder. Under the "Geometry Type" field select polygon. Check the CRS. Based on the above, which epsg code should you select?
+1. Navigate to ```Layer > Create Layer > New Shapefile Layer```.
 
-Now you should name some fields. The researcher you are working with will help define these for each specific project. For now lets create three fields, named "Plot", "Species", and "Notes". Each of these will be Type strings. You can reduce the number of characters to 40 and hit the "Add to Fields List Button." Once done, you can hit "OK" at the bottom right.
+2. A pop-up should now appear. Name the file and it within your ```tree_crown``` folder. Under the ```Geometry Type``` field select ```polygon```. Check the ```CRS```. 
+    - Based on the above, which ```epsg``` code should you select?
 
-Click the "Toggle Editing" button (it looks like a yellow pencil) and then click the "Add polygon feature" button. Choose a tree canopy to delineate. Now you can start drawing points that define the polgyon (these are called vertices). Remember the guidelines for canopy delineation above. To stop drawing your polygon, double or right click (depending if you use a mouse or laptop) the last vertex. You will now be prompted to enter the fields that you created earlier.
+3. Now you should name some fields. The researcher you are working with will help define these for each specific project. For now lets create three fields, named ```Plot```, ```Species```, and ```Notes```. 
+    - Each of these will be ```string``` type. 
+    - You can reduce the number of characters to 40 and hit the ```Add to Fields List Button```. 
+    - Once done, you can hit ```OK``` at the bottom right.
 
-You've done your first canopy. Congrats! Continue to draw more until you fill the entire image. 
+4. Click the ```Toggle Editing``` button (it looks like a yellow pencil) and then click the ```Add polygon feature``` button. 
 
-Once you are done editing click the save edit feature. It's recommended you do this often so you do not lose work as you draw.
+5. Choose a tree canopy to delineate. Now you can start drawing points that define the polygon (these are called ```vertices```). Remember the guidelines for canopy delineation above. 
+
+6. To stop drawing your polygon, double or right click (depending if you use a mouse or laptop) the last vertex. 
+
+7. You will now be prompted to enter the fields that you created earlier.
+
+Congrats! You've done your first canopy. Continue to draw more until you fill the entire image. 
+
+Once you are done editing click the ```save edit``` feature. It's recommended you do this often so you do not lose work as you draw.
 
 ## Editing an existing polygon layer
 
-Now open the other vector file named *XYZ* that you downloaded (hopefully you put it into to the tree_crown folder). Go to Layer > Add Layer > Add vector layer...  Find where the file is located in the pop up and click Add.
+1. Now open the other vector file named *XYZ* that you downloaded (hopefully you put it into to the ```tree_crown``` folder). Go to ```Layer > Add Layer > Add vector layer```...  Find where the file is located in the pop up and click ```Add```.
 
-Anytime you are opening new data it's good practice to check the file details. Double or right click the new layer under the Layers panel. Click on Properties and navigate to the Source tab on the left. Uh-oh what is the CRS. Is it the one you should be using?
+2. Anytime you are opening new data it's good practice to check the file details. Double or right click the new layer under the ```Layers``` panel. Click on ```Properties``` and navigate to the ```Source``` tab on the left. Uh-oh what is the ```CRS```. 
+    - Is it the one you should be using?
 
-You may need to project the file to the correct CRS. Note that you typically only want to do this for vector data. Consult the project lead before doing anything to a raster file. To project the current vector file, navigate to Vector > Data Management Tools > Reproject Layer...  Select the correct epsg code to reproject the current layer. Note that most GIS software will do something called on-the-fly projection to properly display data with different projection systems. It's best practice to actually project the data before working with it.
+3. You may need to ```project``` the file to the correct ```CRS```. To project the current vector file, navigate to Vector > Data Management Tools > Reproject Layer...  Select the correct epsg code to reproject the current layer. Note that most GIS software will do something called on-the-fly projection to properly display data with different projection systems. It's best practice to actually project the data before working with it.
+    - ```NOTE``` that you typically only want to do this for vector data, as changing projections for raster data can begin to corrupt the original information in each pixel by warping and resampling it to fit a new geospatial context. The best (and fastest) approach is to make a new vector file to match a raster, rather than vice versa. To be safe, **consult the project lead before doing anything to a raster file**. 
 
-Now that we know the CRS is correct. Let's delineate another canopy and add it to this file. Can figure this out based on the above exercise?
+Now that we know the CRS is correct. Let's delineate another canopy and add it to this file. 
+    - Can you figure this out based on the above exercise?
 
 
 ## Common troubleshooting
 
-*Beckett you may have some more ideas here...*
+This is a work in progress and will be populated further over time. 
 
-## Closing out and savings
+Please take care to familiarize yourself with this document, especially the ```NOTE``` sections, as these may contain useful tips that might otherwise create issues during the workflow.
 
-*Beckett, again you probably have a better idea on what ask for here*
 
+## Closing out and saving
+
+Good habits for geospatial work revolves around three main principles:
+1. ```Temp Files``` Keep a tidy workspace free of extra files that will inevitably pile up through work during intermediate steps, test runs, or mistakes. At the end of each session, it is critical to spend a few minutes cleaning this up before you close out. This helps keeps files clean, but also helps catch mistakes while the work is still fresh.
+2. ```Version Control``` There are myriad ways to do this. The simplest for vector files is to save a copy of your work for that day as a backup with your initials and the date as a suffix. That way, if you discover a mistake, you may be able tarck down the problem and "roll back" to the day the issue began.
+> UW-ARBORETUM_2020_TreeCrowns_wbh_20231016.geojson <br>
+ UW-ARBORETUM_2020_TreeCrowns_wbh_20231028.geojson <br>
+  UW-ARBORETUM_2020_TreeCrowns_wbh_20231102.geojson <br>
+3. ```Backups``` Where you save your ```geojson``` files and what you name them are important, but the most critical is that you have a backup of your work (the ```geojson``` vector files being the most important layers). This is different than version control in that it means you need a copy of each of those versions to live somewhere other than the machine you are working on. 
+    - A ```geojson``` can easily be dropped into a slack message to the project lead (for example) to get help or just to simply share the updated versions at weekly intervals.
+    - You map documents are something to consider backing up. 
+    - The rasters or other larger files are managed by the project lead and do not need to be backed up, which can save time and space. Your versions of those are already copies.
 
 
 
